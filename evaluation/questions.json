@@ -1,0 +1,312 @@
+{
+  "description": "25 manually verified evaluation questions for the Financial RAG Assistant POC.",
+  "dataset": "Synthetic appliance and service-centre financial dataset",
+  "categories": {
+    "lookup": 5,
+    "aggregation": 5,
+    "comparison": 5,
+    "trend": 5,
+    "multi_hop": 5
+  },
+  "questions": [
+    {
+      "id": "L01",
+      "category": "lookup",
+      "question": "What was the total revenue in 2026?",
+      "expected": {
+        "metric": "Revenue_INR",
+        "year": 2026,
+        "value": 8486502.68
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "L02",
+      "category": "lookup",
+      "question": "What was the gross profit in 2026?",
+      "expected": {
+        "metric": "Gross_Profit_INR",
+        "year": 2026,
+        "value": 2168982.44
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "L03",
+      "category": "lookup",
+      "question": "What was the revenue of customer C0062 in 2026?",
+      "expected": {
+        "metric": "Revenue_INR",
+        "customer_id": "C0062",
+        "year": 2026,
+        "value": 102200.93
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "L04",
+      "category": "lookup",
+      "question": "Which appliance had the highest repair revenue in 2026?",
+      "expected": {
+        "appliance": "TV",
+        "repair_revenue_inr": 1275804.93
+      },
+      "source": "Service_Transactions"
+    },
+    {
+      "id": "L05",
+      "category": "lookup",
+      "question": "What was the gross margin for warranty services in 2026?",
+      "expected": {
+        "warranty": "Yes",
+        "gross_margin_pct": 2.831080
+      },
+      "source": "Service_Transactions"
+    },
+
+    {
+      "id": "A01",
+      "category": "aggregation",
+      "question": "What were the total direct costs in 2026?",
+      "expected": {
+        "metric": "Direct_Cost_INR",
+        "year": 2026,
+        "value": 6317520.24
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "A02",
+      "category": "aggregation",
+      "question": "What was the total warranty revenue in 2026?",
+      "expected": {
+        "metric": "Warranty_Revenue_INR",
+        "year": 2026,
+        "value": 2209563.36
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "A03",
+      "category": "aggregation",
+      "question": "Which business customer generated the highest revenue in 2026?",
+      "expected": {
+        "customer_id": "C0030",
+        "revenue_inr": 221618.00
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "A04",
+      "category": "aggregation",
+      "question": "Which region generated the highest revenue in 2026?",
+      "expected": {
+        "region": "Kolkata",
+        "revenue_inr": 1674940.39
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "A05",
+      "category": "aggregation",
+      "question": "Which business segment generated the highest revenue in 2026?",
+      "expected": {
+        "business_segment": "Residential",
+        "revenue_inr": 4592129.66
+      },
+      "source": "Customer_Year_Summary"
+    },
+
+    {
+      "id": "C01",
+      "category": "comparison",
+      "question": "What was the revenue growth from 2025 to 2026?",
+      "expected": {
+        "from_year": 2025,
+        "to_year": 2026,
+        "growth_pct": 32.27603
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "C02",
+      "category": "comparison",
+      "question": "What was the revenue growth from 2024 to 2025?",
+      "expected": {
+        "from_year": 2024,
+        "to_year": 2025,
+        "growth_pct": 36.034728
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "C03",
+      "category": "comparison",
+      "question": "How much did revenue increase from 2024 to 2026?",
+      "expected": {
+        "from_year": 2024,
+        "to_year": 2026,
+        "growth_pct": 79.941338
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "C04",
+      "category": "comparison",
+      "question": "Which appliance had the lowest repair gross margin in 2026?",
+      "expected": {
+        "appliance": "Microwave",
+        "gross_margin_pct": 17.578786
+      },
+      "source": "Service_Transactions"
+    },
+    {
+      "id": "C05",
+      "category": "comparison",
+      "question": "How much lower was the warranty gross margin than the non-warranty gross margin in 2026?",
+      "expected": {
+        "margin_difference_percentage_points": 33.109337
+      },
+      "source": "Service_Transactions"
+    },
+
+    {
+      "id": "T01",
+      "category": "trend",
+      "question": "What was the total revenue in each year from 2024 to 2026?",
+      "expected": {
+        "2024": 4716260.75,
+        "2025": 6415752.47,
+        "2026": 8486502.68
+      },
+      "source": "Annual_KPIs"
+    },
+    {
+      "id": "T02",
+      "category": "trend",
+      "question": "Which business customers had declining revenue from 2025 to 2026?",
+      "expected": {
+        "customer_ids": [
+          "C0036",
+          "C0091",
+          "C0042",
+          "C0069",
+          "C0115",
+          "C0052",
+          "C0089",
+          "C0002",
+          "C0106",
+          "C0014",
+          "C0060",
+          "C0108",
+          "C0072",
+          "C0097",
+          "C0103"
+        ],
+        "count": 15
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "T03",
+      "category": "trend",
+      "question": "What was the revenue growth for customer C0062 from 2025 to 2026?",
+      "expected": {
+        "customer_id": "C0062",
+        "growth_pct": 15.987112
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "T04",
+      "category": "trend",
+      "question": "How did customer C0062's gross margin change from 2024 to 2026?",
+      "expected": {
+        "customer_id": "C0062",
+        "2024_margin_pct": 15.24,
+        "2026_margin_pct": 31.67
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "T05",
+      "category": "trend",
+      "question": "How did warranty profitability compare with non-warranty profitability in 2026?",
+      "expected": {
+        "warranty_margin_pct": 2.831080,
+        "non_warranty_margin_pct": 35.940418,
+        "warranty_margin_difference_percentage_points": 33.109337
+      },
+      "source": "Service_Transactions"
+    },
+
+    {
+      "id": "M01",
+      "category": "multi_hop",
+      "question": "Which declining business customers from 2025 to 2026 had high repair costs?",
+      "expected": {
+        "customer_ids": [
+          "C0106",
+          "C0108",
+          "C0103",
+          "C0089",
+          "C0097",
+          "C0042",
+          "C0052"
+        ],
+        "count": 7,
+        "high_repair_cost_threshold_inr": 20688.31
+      },
+      "source": "Customer_Year_Summary + Service_Transactions"
+    },
+    {
+      "id": "M02",
+      "category": "multi_hop",
+      "question": "Tell me about customer C0062, including its annual performance and relevant service records.",
+      "expected": {
+        "customer_id": "C0062",
+        "2024_revenue_inr": 38916.29,
+        "2025_revenue_inr": 88114.04,
+        "2026_revenue_inr": 102200.93,
+        "2024_service_id": "S0000062",
+        "2026_service_id": "S0006238"
+      },
+      "source": "Customer_Year_Summary + Service_Transactions"
+    },
+    {
+      "id": "M03",
+      "category": "multi_hop",
+      "question": "Which appliance had the lowest repair margin in 2026, and what was its repair revenue?",
+      "expected": {
+        "appliance": "Microwave",
+        "gross_margin_pct": 17.578786,
+        "repair_revenue_inr": 832029.35
+      },
+      "source": "Service_Transactions"
+    },
+    {
+      "id": "M04",
+      "category": "multi_hop",
+      "question": "Which region had the highest 2026 revenue and what was its gross profit and gross margin?",
+      "expected": {
+        "region": "Kolkata",
+        "revenue_inr": 1674940.39,
+        "gross_profit_inr": 426331.75,
+        "gross_margin_pct": 25.453548
+      },
+      "source": "Customer_Year_Summary"
+    },
+    {
+      "id": "M05",
+      "category": "multi_hop",
+      "question": "Which business segment had the highest 2026 revenue and what were its gross profit and gross margin?",
+      "expected": {
+        "business_segment": "Residential",
+        "revenue_inr": 4592129.66,
+        "gross_profit_inr": 1151162.41,
+        "gross_margin_pct": 25.06816
+      },
+      "source": "Customer_Year_Summary"
+    }
+  ]
+}
